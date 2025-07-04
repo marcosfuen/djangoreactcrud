@@ -126,6 +126,48 @@ _Ejecutamos el servidor vite_
 npm run dev
 ```
 
+### Fichero de configuraccion de no debe faltar en el proyecto ".env" 🛠️
+
+```
+# Rename this file to ".env" for local deployment
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'llave_secreta'
+
+DEBUG = True
+
+# conexion a bd postgres
+DATABASE_URL = 'postgres://postgres:postgres@127.0.0.1:5432/djangoReactCrud'
+
+# conexion a bd mariadb o mysql
+# DATABASE_URL = 'mysql://USER:PASSWORD@HOST:PORT/NAME'
+
+# Default superuser
+DEFAULT_SUPERUSER_NAME = 'admin'
+DEFAULT_SUPERUSER_EMAIL = 'admin@example.com'
+DEFAULT_SUPERUSER_PASSWORD = 'secret'
+
+# Active Directory
+AD_DNS_NAME = 'my.domain.com'
+AD_LDAP_PORT = 389
+LDAP_AUTH_USE_TLS = False
+LDAP_AUTH_SEARCH_BASE = 'ou=CATALOG,dc=my,dc=domain,dc=com'
+LDAP_AUTH_ACTIVE_DIRECTORY_DOMAIN = 'my.domain.com'
+
+# Email
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'example.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'bob@example.com'
+EMAIL_HOST_PASSWORD = 'secret'
+EMAIL_FROM = 'bob@example.com'
+EMAIL_USE_TLS = False
+
+# Notifications
+CONTRACT_EXPIRATION_NOTIFICATIONS_EMAIL = 'notification-receiver@example.com'
+
+```
+
 ## Deployment 📦
 
 _Este proyecto esta configurado para poner en produccion desde gitlab con docker, ten en cuenta que las direcciones ip, nombre de bd, puertos, usuarios y password son todos por defecto es recomendable cambiar antes de poner en produccion_
