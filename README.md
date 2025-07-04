@@ -128,7 +128,7 @@ npm run dev
 
 ## Deployment 📦
 
-_Este proyecto esta configurados para despelgar desde gitlab con docker, ten en cuenta que las direcciones ip, nombre de bd, puertos, usuarios y password son todos por defecto es recomendable cambiar antes de poner en produccion_
+_Este proyecto esta configurado para poner en produccion desde gitlab con docker, ten en cuenta que las direcciones ip, nombre de bd, puertos, usuarios y password son todos por defecto es recomendable cambiar antes de poner en produccion_
 
 ## Construido con 🛠️
 
