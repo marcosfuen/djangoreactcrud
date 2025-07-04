@@ -126,7 +126,7 @@ _Ejecutamos el servidor vite_
 npm run dev
 ```
 
-### Fichero de configuraccion de no debe faltar en el proyecto ".env" 🛠️
+### Fichero de configuracion de no debe faltar en el proyecto ".env" 🛠️
 
 ```
 # Rename this file to ".env" for local deployment
