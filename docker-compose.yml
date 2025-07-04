@@ -1,0 +1,68 @@
+services:
+  django:
+    container_name: django-api
+    environment:
+      DATABASE_URL: "postgres://postgres:postgres@10.0.0.82:5432/djangoReactCrud"
+    restart: always
+    build: ./
+   
+    ports:
+      - "8000:8000"
+
+    command: >
+      sh -c " sleep 20 &&
+      python manage.py makemigrations &&
+      python manage.py migrate &&
+      python manage.py makesuperuser &&
+      gunicorn djangoreactcrud.wsgi:application --bind 0.0.0.0:8000"
+
+    volumes:
+      - media:/usr/src/app
+      - static:/usr/src/app/static
+  react:
+        build: ./frontend
+        container_name: django-react
+        ports:
+          - "5173:5173"
+        depends_on:
+          - django
+  django-react-nginx:
+    build: ./nginx
+    container_name: django-react-nginx
+    volumes:
+      - static:/usr/src/app/static
+    ports:
+      - "80:80"
+    depends_on:
+      - react
+
+# networks:
+#   custom-bridge:
+#     driver: bridge
+#     ipam:
+#       config:
+#         - subnet: "10.0.0.0/24"
+#           gateway: "10.0.0.1"
+volumes:
+  media:
+  static:
+
+# version: "3.8"
+#             services:
+#               frontend:
+#                 build: ./frontend
+#                 ports:
+#                   - "5173:5173"
+#               backend:
+#                 build: ./backend
+#                 ports:
+#                   - "8000:8000"
+#               nginx:
+#                 image: nginx:latest
+#                 ports:
+#                   - "80:80"
+#                 volumes:
+#                   - ./nginx.conf:/etc/nginx/conf.d/default.conf
+#                 depends_on:
+#                   - frontend
+#                   - backend
