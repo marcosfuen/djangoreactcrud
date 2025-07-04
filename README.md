@@ -135,7 +135,8 @@ _Este proyecto esta configurados para despelgar desde gitlab con docker, ten en 
 _Herramientas que se utilizarón para crear el proyecto_
 
 * [Python](https://www.python.org/) - El lenguaje de programación usado
-* [Django](https://www.djangoproject.com/) - El framework web usado
+* [Django](https://www.djangoproject.com/) - El framework web usado backend
+* [React](https://react.dev/) - El framework web usado frontend
 * [Visual Studio Code](https://code.visualstudio.com/) - Editor Usado
 
 ## Licencia 📄
