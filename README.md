@@ -74,9 +74,61 @@ pip install -r requirements.txt
 ```
 _De esta forma ya tenemos en entorno virtual preparado para que nuestra aplicación pueda correr sin problema alguno_
 
+### Instalación Backend 🛠️
+
+_Preparando el Backend_
+_Activando el entorno virtual en linux_
+
+```
+cd env/nombre del proyecto/ && source bin/activate
+```
+_Pasamos a la carpeta del proyecto en este caso esta en una carpeta que se llama proyectos_
+
+```
+cd proyectos/nombre del proyecto
+```
+
+_Instalar los paquetes que esten en elfichero requirements.txt del proyecto_
+
+```
+pip install -r requirements.txt
+```
+
+_Ejecutas las migraciones, tener en cuenta que primero tienes que tener configurado la bd del proyecto en este caso Postgresql_
+
+```
+python manage.py makemigrations
+```
+```
+python manage.py migrate
+```
+_Correr la aplicacion con el servidor de django_
+
+```
+python manage.py runserver
+```
+
+### Instalación Frontend 🛠️
+
+_Pasamos a la carpeta del proyecto llamada frontend_
+
+```
+cd proyectos/nombre del proyecto/frontend
+```
+_Instalamos las dependencias ejecutando_
+
+```
+npm install
+```
+_Ejecutamos el servidor vite_
+
+```
+npm run dev
+```
+
 ## Deployment 📦
 
-_Agrega notas adicionales sobre como hacer deploy_
+_Este proyecto esta configurados para despelgar desde gitlab con docker, ten en cuenta que las direcciones ip, nombre de bd, puertos, usuarios y password son todos por defecto es recomendable cambiar antes de poner en produccion_
 
 ## Construido con 🛠️
 
